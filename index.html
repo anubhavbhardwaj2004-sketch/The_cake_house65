@@ -373,6 +373,78 @@
                     window.open(`https://wa.me/${phone}?text=${waMsg}`, '_blank');
                 };
             });
+            let cart = [];
+
+            function updateCartDisplay() {
+                let cartDiv = document.getElementById('cart');
+                if (!cartDiv) {
+                    cartDiv = document.createElement('div');
+                    cartDiv.id = 'cart';
+                    cartDiv.style = 'background:#fffbe7; border-radius:10px; box-shadow:0 2px 8px #fcd4ce; padding:16px 12px; max-width:350px; margin:20px auto;';
+                    document.getElementById('order').appendChild(cartDiv);
+                }
+                if (cart.length === 0) {
+                    cartDiv.innerHTML = '<b>Your cart is empty.</b>';
+                    return;
+                }
+                let html = '<h3 style="color:#b33030; margin-top:0;">Cart</h3><ul style="padding-left:18px;">';
+                let grandTotal = 0;
+                cart.forEach((item, idx) => {
+                    html += `<li>
+                        <b>${item.item}</b> - Qty: ${item.quantity}, Wt: ${item.weight}kg<br>
+                        <span>₹${item.total.toFixed(2)}</span>
+                        <button style="margin-left:10px; color:#b33030; background:none; border:none; cursor:pointer;" onclick="removeCartItem(${idx})">Remove</button>
+                    </li>`;
+                    grandTotal += item.total;
+                });
+                html += `</ul><hr><b>Grand Total: ₹${grandTotal.toFixed(2)}</b>
+                <br><button id="checkout-btn" style="background:#25D366; color:#fff; border:none; padding:10px 18px; border-radius:6px; font-size:1rem; margin-top:10px; cursor:pointer;">Checkout</button>`;
+                cartDiv.innerHTML = html;
+
+                document.getElementById('checkout-btn').onclick = function() {
+                    let orderSummary = cart.map((item, i) =>
+                        `${i+1}. ${item.item} - Qty: ${item.quantity}, Wt: ${item.weight}kg, ₹${item.total.toFixed(2)}`
+                    ).join('\n');
+                    const phone = '919289282269';
+                    const waMsg = encodeURIComponent(
+                        `Cake House Cart Order:\n\n${orderSummary}\n\nGrand Total: ₹${grandTotal.toFixed(2)}`
+                    );
+                    window.open(`https://wa.me/${phone}?text=${waMsg}`, '_blank');
+                };
+            }
+
+            window.removeCartItem = function(idx) {
+                cart.splice(idx, 1);
+                updateCartDisplay();
+            };
+
+            function addToCart(order) {
+                cart.push(order);
+                updateCartDisplay();
+            }
+
+            // Add "Add to Cart" button after bill is generated
+            const billDiv = document.getElementById('bill');
+            const observer = new MutationObserver(function() {
+                if (billDiv.style.display === 'block' && !document.getElementById('add-to-cart')) {
+                    const btn = document.createElement('button');
+                    btn.id = 'add-to-cart';
+                    btn.textContent = 'Add to Cart';
+                    btn.style = 'background:#b33030; color:#fff; border:none; padding:10px 18px; border-radius:6px; font-size:1rem; margin-top:10px; cursor:pointer;';
+                    billDiv.appendChild(btn);
+
+                    btn.onclick = function() {
+                        // Get last order from localStorage
+                        let orders = JSON.parse(localStorage.getItem('cakehouse_orders') || '[]');
+                        if (orders.length > 0) {
+                            addToCart(orders[orders.length - 1]);
+                            billDiv.style.display = 'none';
+                        }
+                    };
+                }
+            });
+            observer.observe(billDiv, { attributes: true, childList: true, subtree: false });
+            
         </script>
         &copy; 2024 The Cake House. All rights reserved.
     </footer>
