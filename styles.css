@@ -1,0 +1,224 @@
+/* Video Card Styles */
+.video-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    background: linear-gradient(120deg, #fff3e0 60%, #ffe1e8 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px #fcd4ce;
+    padding: 24px 18px;
+    margin: 0 auto 20px auto;
+    max-width: 700px;
+}
+.tour-video {
+    width: 320px;
+    height: 200px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px #f88379;
+    background: #fff;
+}
+.video-desc {
+    max-width: 320px;
+}
+.video-desc h3 {
+    margin: 0 0 8px 0;
+    color: #b33030;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+}
+.video-desc p {
+    margin: 0;
+    color: #444;
+    font-size: 1rem;
+}
+@media (max-width: 800px) {
+    .video-card {
+        flex-direction: column;
+        gap: 16px;
+        padding: 14px 4vw;
+    }
+    .tour-video {
+        width: 90vw;
+        max-width: 350px;
+        height: 180px;
+    }
+    .video-desc {
+        max-width: 95vw;
+    }
+}
+/* Logo small size */
+.logo-small {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #fff5f3;
+    color: #333;
+}
+header {
+    background: linear-gradient(90deg, #f88379 0%, #fcd4ce 100%);
+    padding: 40px 0 20px 0;
+    text-align: center;
+}
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #b33030;
+    margin: 0;
+    letter-spacing: 2px;
+}
+nav {
+    margin-top: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: #b33030;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #fff;
+    background: #b33030;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.section {
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 20px #ffc3b8;
+    padding: 30px 5vw;
+}
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #f88379;
+    margin-bottom: 15px;
+}
+.cookies, .cakes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+.item-box {
+    background: linear-gradient(120deg, #fff3e0 60%, #ffe1e8 100%);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #fcd4ce;
+    width: 230px;
+    padding: 18px 8px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.item-box:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 4px 18px #f88379;
+}
+.item-title {
+    font-weight: 700;
+    color: #b33030;
+    margin-bottom: 8px;
+}
+.item-desc {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #444;
+}
+.premium {
+    font-size: 0.95rem;
+    color: #e67a3f;
+    font-weight: bold;
+}
+
+/* Order Form */
+.order-form {
+    margin-top: 20px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 10px;
+}
+.order-form input,
+.order-form select,
+.order-form textarea {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #f88379;
+    font-size: 0.95rem;
+}
+.order-form button {
+    background: #f88379;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #fcd4ce;
+    transition: background 0.2s, box-shadow 0.2s;
+    opacity: 0;
+    animation: fadeInBtn 1.2s ease-in 0.5s forwards;
+}
+.order-form button:hover {
+    background: #b33030;
+    box-shadow: 0 4px 16px #f88379;
+}
+
+/* Animated Text Effect for Section Titles and Header */
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.section-title, header h1 {
+    background: linear-gradient(90deg, #f88379, #b33030, #fcd4ce, #f88379);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 5s linear infinite alternate;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes fadeInBtn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+    .cookies, .cakes {
+        flex-direction: column;
+        align-items: center;
+    }
+    .item-box {
+        width: 80vw;
+    }
+    header h1 {
+        font-size: 2.2rem;
+    }
+    .section-title {
+        font-size: 1.45rem;
+    }
+}
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #f88379;
+    color: #fff;
+    margin-top: 40px;
+}

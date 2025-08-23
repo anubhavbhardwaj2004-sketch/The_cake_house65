@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake House - Order Online</title>
+    <!--link for icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400|Open+Sans:400,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css responsive-->
+    <link rel="stylesheet" href="./phone.css">
+</head>
+
+<body>
+    <header>
+        <!--logo modified-->
+        <img src="./assets/logo-modified.png" alt="logo" class="logo-small">
+        <h1>The Cake House</h1>
+        <nav>
+            <a href="#order">Order Online</a>
+            <a href="#cookies">Cookies</a>
+            <a href="#cakes">Cake Flavours</a>
+            <a href="#About">About</a>
+            <a href="#video">video</a>
+        </nav>
+        <div style="margin-top:18px; font-size:1.25rem; color:#fff;">Order the finest cakes & cookies in premium quality
+        </div>
+    </header>
+
+    <!-- Order Section -->
+    <section class="section" id="order">
+        <div class="section-title">Order Online</div>
+        <form class="order-form">
+            <label for="">Country </label>
+            <select id="country" required>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+            </select>
+            <label for="">City </label>
+            <select id="country" required>
+                <option value="Delhi">Delhi</option>
+                <option value="Up">Up</option>
+                <option value="Delhi-NCR">Delhi-NCR</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Hydrabad">Hydrabad</option>
+                <option value="Pune">Pune</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Ahemdabad">Ahemdabad</option>
+                <option value="Surat">Surat</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Kanpur">Kanpur</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Indore">Indore</option>
+                <option value="Thane">Thane</option>
+                <option value="Bhopal">Bhopal</option>
+                <option value="Visakhapatnam">Visakhapatnam</option>
+                <option value="Pimpri-Chinchwad">Pimpri-Chinchwad</option>
+                <option value="Patna">Patna</option>
+                <option value="Vadodara">Vadodara</option>
+                <option value="Ghaziabad">Ghaziabad</option>
+                <option value="Ludhiana">Ludhiana</option>
+                <option value="Agra">Agra</option>
+                <option value="Nashik">Nashik</option>
+                <option value="Faridabad">Faridabad</option>
+                <option value="Meerut">Meerut</option>
+                <option value="Rajkot">Rajkot</option>
+                <option value="Kalyan-Dombivli">Kalyan-Dombivli</option>
+                <option value="Vasai-Virar">Vasai-Virar</option>
+                <option value="Varanasi">Varanasi</option>
+                <option value="Srinagar">Srinagar</option>
+                <option value="Aurangabad">Aurangabad</option>
+            </select>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required placeholder="Your Name">
+            <label for="number">Number:</label>
+            <input type="text" id="number" required placeholder="Your Number">
+            <label for="item">Select Item:</label>
+            <select id="item" required>
+                <optgroup label="Cookies">
+                    <option>Chocolate Chip Cookie</option>
+                    <option>Oatmeal Raisin Cookie</option>
+                    <option>Butter Shortbread</option>
+                    <option>Double Chocolate Cookie</option>
+                    <option>Almond Biscotti</option>
+                </optgroup>
+                <optgroup label="Cakes">
+                    <option>Classic Chocolate Cake</option>
+                    <option>Vanilla Dream Cake</option>
+                    <option>Red Velvet Cake</option>
+                    <option>Black Forest Cake</option>
+                    <option>Strawberry Delight Cake</option>
+                    <option>Rainbow Funfetti Cake</option>
+                </optgroup>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" required placeholder="Number of items">
+
+            <label for="weight">How many kg?</label>
+            <input type="number" id="weight" min="0.25" step="0.25" placeholder="e.g. 1.5" required>
+
+            <label for="message">Message / Instructions:</label>
+            <textarea id="message" rows="3"
+                placeholder="Special requests, birthday message, allergies, etc."></textarea>
+
+            <button type="submit">Place Order</button>
+        </form>
+        <div id="bill"
+            style="display:none; margin-top:20px; background:#fffbe7; border-radius:10px; box-shadow:0 2px 8px #fcd4ce; padding:18px 12px; max-width:350px; margin-left:auto; margin-right:auto;">
+        </div>
+    </section>
+    <hr style="margin:40px 0; border:none; border-top:1px solid #eee;">
+    <!-- Cookies Section -->
+    <section class="section" id="cookies">
+        <div class="section-title">Our Premium Cookies</div>
+        <div class="cookies">
+            <div class="item-box">
+                <img src="./assets/BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9.jpg" alt="Chocolate Chip Cookie"
+                    style="width:100%; border-radius:8px; margin-bottom:8px;">
+                <p>Chocolate Chip Cookie 250g: half=120 </p>
+                <div class="item-title">Chocolate Chip</div>
+                <div class="item-desc">Classic blend of chocolate chunks & rich dough</div>
+                <div class="premium">Premium Quality</div>
+            </div>
+            <div class="item-box">
+                <img src="./assets/OIP.jpeg" alt="Chocolate Chip Cookie"
+                    style="width:100%; border-radius:8px; margin-bottom:8px;">
+                <p>
+                    Oatmeal Raisin Cookie 250g: half=150
+                </p>
+                <div class="item-title">Oatmeal Raisin</div>
+                <div class="item-desc">Wholesome oats & juicy raisins, soft baked</div>
+                <div class="premium">Premium Quality</div>
+            </div>
+            <div class="item-box">
+                <img src="./assets/bb-cookies-2-scaled.jpg" alt="Chocolate Chip Cookie"
+                    style="width:100%; border-radius:8px; margin-bottom:8px;">
+                <p> Butter Shortbread 250g: half=110 </p>
+                <div class="item-title">Butter Shortbread</div>
+                <div class="item-desc">Melt-in-mouth buttery cookies</div>
+                <div class="premium">Premium Quality</div>
+            </div>
+            <div class="item-box">
+                <img src="./assets/multi.jpeg" alt="Chocolate Chip Cookie"
+                    style="width:100%; border-radius:8px; margin-bottom:8px;">
+                <p> Double Chocolate Cookie 250g: half=160 </p>
+                <div class="item-title">Multigrain Cookies</div>
+                <div class="item-desc">Rich Grains cookie base & Fiber</div>
+                <div class="premium">Premium Quality</div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Cakes Section -->
+    <section class="section" id="cakes">
+        <div class="section-title">Premium Cake Flavours</div>
+        <div class="cakes">
+            <div class="item-box">
+                <img src="./assets/choclate cake.jpg" alt="Chocolate Chip Cookie"
+                    style="width:100%; border-radius:8px; margin-bottom:8px;">
+                <p>
+                    choclate cake 500g:=300
+                    choclate cake 1kg:=700</p>
+                <div class="item-title">Classic Chocolate</div>
+                <div class="item-desc">Moist chocolate cake with fudge icing</div>
+                <div class="premium">Premium Quality</div>
+            </div>
+            <div class="item-box">
+                <img src="./assets/vannila.jpg" alt="Chocolate Chip Cookie"
+                    style="width:100%; border-radius:8px; margin-bottom:8px;">
+
+                <p> Vanilla Dream 500g:=380
+                    Vanilla Dream 1kg:=680</p>
+                <div class="item-title">Vanilla Dream</div>
+                <div class="item-desc">Soft vanilla sponge, creamy vanilla filling</div>
+                <div class="premium">Premium Quality</div>
+            </div>
+            <div class="item-box">
+                <img src="./assets/red velvate.jpg" alt="Chocolate Chip Cookie"
+                    style="width:100%; border-radius:8px; margin-bottom:8px;">
+
+                <p> Red Velvet 500g:=400
+                    Red Velvet 1kg:=800</p>
+                <div class="item-title">Red Velvet</div>
+                <div class="item-desc">Classic red velvet layers, cream cheese frosting</div>
+                <div class="premium">Premium Quality</div>
+            </div>
+            <div class="item-box">
+                <img src="./assets/trufle.jpg" alt="Chocolate Chip Cookie"
+                    style="width:100%; border-radius:8px; margin-bottom:8px;">
+
+                <p> Black Forest 500g:=570
+                    Black Forest 1kg:=1000</p>
+                <div class="item-title">Chocolate Truffle</div>
+                <div class="item-desc">Chocolate cake, cherries, whipped cream topping</div>
+                <div class="premium">Premium Quality</div>
+            </div>
+            <div class="item-box">
+                <img src="./assets/strawberry .jpg" alt="Chocolate Chip Cookie"
+                    style="width:100%; border-radius:8px; margin-bottom:8px;">
+
+                <p> Strawberry Delight 500g:=530
+                    Strawberry Delight 1kg:=740</p>
+
+                <div class="item-title">Strawberry Delight</div>
+                <div class="item-desc">Light sponge with fresh strawberry compote</div>
+                <div class="premium">Premium Quality</div>
+            </div>
+            <div class="item-box">
+                <img src="./assets/Fruit.jpg" alt="Chocolate Chip Cookie"
+                    style="width:100%; border-radius:8px; margin-bottom:8px;">
+
+                <p> Rainbow Fruit 500g:=510
+                    Rainbow Fruit 1kg:=800</p>
+                <div class="item-title">Rainbow Fruit</div>
+                <div class="item-desc">Colorful sprinkles in vanilla sponge</div>
+                <div class="premium">Premium Quality</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Video Section -->
+    <section class="section" id="video">
+        <div class="section-title">Cake House Tour</div>
+        <div class="video-card">
+            <video class="tour-video" controls poster="./assets/choclate cake.jpg">
+                <source src="./assets/cake house tour.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-desc">
+                <h3>Bakery Tour</h3>
+                <p>Take a quick tour of The Cake House! See how our delicious cakes and cookies are made fresh every day
+                    with love and premium ingredients.</p>
+            </div>
+        </div>
+        <div class="video-card">
+            <video class="tour-video" controls poster="./assets/choclate cake.jpg">
+                <source src="./assets/latest .mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-desc">
+                <h3>Latest creation</h3>
+                <p>we create love with new</p>
+            </div>
+    </section>
+    <section class="section" id="About">
+        <div class="section-title">About The Cake House</div>
+        <div>
+            <p>
+                <center>Welcome to The Cake House, where we believe in creating more than just desserts - we create
+                    experiences. Our journey began with a simple passion for baking and a dream to bring joy to every
+                    celebration. At The Cake House, we use only the finest ingredients, ensuring that every bite is a
+                    testament to quality and craftsmanship. From our classic chocolate chip cookies to our decadent
+                    cakes, each item is baked with love and attention to detail. Whether you're celebrating a birthday,
+                    anniversary, or simply indulging in a sweet treat, The Cake House is here to make your moments
+                    memorable. Thank you for choosing us to be a part of your special occasions.
+            </p>
+            </center>
+        </div>
+    </section>
+    <section class="section" id="About">
+        <div class="section-title">Follow us </div>
+        <div>
+            <p style="text-align:center;">
+                Follow us on Instagram <i class="fa-brands fa-instagram"></i>
+                <a href="https://www.instagram.com/the_cake_house65" target="_blank">click here</a>
+                <br><br>
+                Or WhatsApp us <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i>
+                <a href="https://wa.me/919289282269" target="_blank" style="color:#25D366;text-decoration:none;">+91
+                    92892 82269</a>
+                <br><br>
+
+            </p>
+        </div>
+    </section>
+
+    <!-- Location Map Section -->
+    <section class="section" id="location">
+        <div class="section-title">Find Us</div>
+        <div style="text-align:center; margin-bottom:10px;">Visit The Cake House at our store location below!</div>
+        <div style="display:flex; justify-content:center;">
+            <iframe src="https://www.google.com/maps?q=The+Cake+House,+Your+City,+India&output=embed" width="220"
+                height="150" style="border:0; border-radius:10px; box-shadow:0 2px 8px #fcd4ce; max-width:90vw;"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <script>
+            // Simple price list for demonstration
+            const priceList = {
+                "Chocolate Chip Cookie": 300,
+                "Oatmeal Raisin Cookie": 400,
+                "Butter Shortbread": 280,
+                "Double Chocolate Cookie": 300,
+                "Almond Biscotti": 500,
+                "Classic Chocolate Cake": 500,
+                "Vanilla Dream Cake": 480,
+                "Red Velvet Cake": 520,
+                "Black Forest Cake": 550,
+                "Strawberry Delight Cake": 530,
+                "Rainbow Funfetti Cake": 510
+            };
+
+            document.querySelector('.order-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const item = document.getElementById('item').value;
+                const quantity = parseInt(document.getElementById('quantity').value);
+                const weight = parseFloat(document.getElementById('weight').value);
+                const message = document.getElementById('message').value;
+
+                // Calculate price
+                let unitPrice = priceList[item] || 0;
+                let total = 0;
+                if (item.toLowerCase().includes('cake')) {
+                    total = unitPrice * weight;
+                } else {
+                    total = unitPrice * quantity;
+                }
+
+                // Store order in localStorage (for demo)
+                const order = { name, item, quantity, weight, message, total, date: new Date().toLocaleString() };
+                let orders = JSON.parse(localStorage.getItem('cakehouse_orders') || '[]');
+                orders.push(order);
+                localStorage.setItem('cakehouse_orders', JSON.stringify(orders));
+
+                // Show bill
+                const billDiv = document.getElementById('bill');
+                billDiv.innerHTML = `
+            <h3 style=\"color:#b33030; margin-top:0;\">Order Bill</h3>
+            <b>Name:</b> ${name}<br>
+            <b>Item:</b> ${item}<br>
+            <b>Quantity:</b> ${quantity}<br>
+            <b>Weight (kg):</b> ${weight}<br>
+            <b>Message:</b> ${message ? message : '-'}<br>
+            <hr>
+            <b>Total Amount:</b> ₹${total.toFixed(2)}<br>
+            <div style=\"margin:14px 0 8px 0;\"><b>Payment Options:</b></div>
+            <ul style=\"padding-left:18px; margin:0 0 10px 0;\">
+                <li>Cash on Delivery</li>
+                <li>UPI Payment:<br>
+                    <a href='upi://pay?pa=7042178046@ibl&pn=Cake%20House&am=${total.toFixed(2)}&cu=INR' style='color:#25D366; font-weight:bold;' target='_blank'>
+                        Pay ₹${total.toFixed(2)} via UPI (7042178046@ibl)
+                    </a>
+                    <div style='font-size:0.95em; color:#b33030;'>Tap to pay by UPI app</div>
+                </li>
+            </ul>
+            <span style=\"color:#4caf50;\">Thank you for your order!</span>
+        `;
+                billDiv.style.display = 'block';
+                this.reset();
+
+                // WhatsApp integration
+                const phone = '919289282269'; // Change to your WhatsApp number
+                const waMsg = encodeURIComponent(
+                    `New Cake House Order!\n\nName: ${name}\nItem: ${item}\nQuantity: ${quantity}\nWeight (kg): ${weight}\nMessage: ${message ? message : '-'}\nTotal: ₹${total.toFixed(2)}`
+                );
+                window.open(`https://wa.me/${phone}?text=${waMsg}`, '_blank');
+            });
+        </script>
+        &copy; 2024 The Cake House. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
