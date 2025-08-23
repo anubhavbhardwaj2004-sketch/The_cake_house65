@@ -337,7 +337,7 @@
                 orders.push(order);
                 localStorage.setItem('cakehouse_orders', JSON.stringify(orders));
 
-                // Show bill
+                // Show bill with WhatsApp button
                 const billDiv = document.getElementById('bill');
                 billDiv.innerHTML = `
             <h3 style=\"color:#b33030; margin-top:0;\">Order Bill</h3>
@@ -358,17 +358,20 @@
                     <div style='font-size:0.95em; color:#b33030;'>Tap to pay by UPI app</div>
                 </li>
             </ul>
-            <span style=\"color:#4caf50;\">Thank you for your order!</span>
+            <button id='send-whatsapp' style='background:#25D366; color:#fff; border:none; padding:10px 18px; border-radius:6px; font-size:1rem; margin-top:10px; cursor:pointer;'>Send to WhatsApp</button>
+            <span style=\"color:#4caf50; display:block; margin-top:10px;\">Thank you for your order!</span>
         `;
                 billDiv.style.display = 'block';
                 this.reset();
 
-                // WhatsApp integration
-                const phone = '919289282269'; // Change to your WhatsApp number
-                const waMsg = encodeURIComponent(
-                    `New Cake House Order!\n\nName: ${name}\nItem: ${item}\nQuantity: ${quantity}\nWeight (kg): ${weight}\nMessage: ${message ? message : '-'}\nTotal: ₹${total.toFixed(2)}`
-                );
-                window.open(`https://wa.me/${phone}?text=${waMsg}`, '_blank');
+                // Add WhatsApp button event
+                document.getElementById('send-whatsapp').onclick = function() {
+                    const phone = '919289282269'; // Change to your WhatsApp number
+                    const waMsg = encodeURIComponent(
+                        `New Cake House Order!\n\nName: ${name}\nItem: ${item}\nQuantity: ${quantity}\nWeight (kg): ${weight}\nMessage: ${message ? message : '-'}\nTotal: ₹${total.toFixed(2)}`
+                    );
+                    window.open(`https://wa.me/${phone}?text=${waMsg}`, '_blank');
+                };
             });
         </script>
         &copy; 2024 The Cake House. All rights reserved.
