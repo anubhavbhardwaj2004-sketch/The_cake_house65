@@ -86,6 +86,8 @@
             <input type="text" id="number" required placeholder="Your Number">
             <label for="location">Location:</label>
             <input type="text" id="location" required placeholder="Your Delivery Location">
+            <label for="date">date & time when you want your order </label>    
+    <input id="date"placeholder="Enter your date" type="datetime-local">
             <label for="item">Select Item:</label>
             <select id="item" required>
                 <optgroup label="Cookies">
@@ -339,6 +341,7 @@
                 const weight = parseFloat(document.getElementById('weight').value);
 
                 const number = document.getElementById('number').value;
+                 const date = document.getElementById('date').value;
                 const location = document.getElementById('location').value;
                 const message = document.getElementById('message').value;
 
@@ -364,6 +367,7 @@
             <b>Name:</b> ${name}<br>
             <b>Number:</b> ${number}<br>
             <b>Location:</b> ${location}<br>
+            <b>Date & Time:</b> ${date}<br>
             <b>Item:</b> ${item}<br>
             <b>Quantity:</b> ${quantity}<br>
             <b>Weight (kg):</b> ${weight}<br>
@@ -391,7 +395,7 @@
                 document.getElementById('send-whatsapp').onclick = function() {
                     const phone = '919289282269'; // Change to your WhatsApp number
                     const waMsg = encodeURIComponent(
-                        `New Cake House Order!\n\nName: ${name}\nNumber: ${number}\nLocation: ${location}\nItem: ${item}\nQuantity: ${quantity}\nWeight (kg): ${weight}\nMessage: ${message ? message : '-'}\nTotal: ₹${total.toFixed(2)}`
+                        `New Cake House Order!\n\nName: ${name}\nNumber: ${number}\nLocation: ${location}\ndate:${date}\nItem: ${item}\nQuantity: ${quantity}\nWeight (kg): ${weight}\nMessage: ${message ? message : '-'}\nTotal: ₹${total.toFixed(2)}`
                     );
                     window.open(`https://wa.me/${phone}?text=${waMsg}`, '_blank');
                 };
