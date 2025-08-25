@@ -40,10 +40,26 @@
     height: 200px;
     border-radius: 14px;
     box-shadow: 0 2px 12px #f88379;
+.item-desc {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #444;
+    text-shadow: 1px 2px 0 #fffbe7, 2px 4px 8px #f88379, 0 1px 0 #fcd4ce;
+    transform: perspective(200px) rotateX(6deg) scale(1.01);
+    animation: item3dpop 2.2s cubic-bezier(.4,2,.6,.8) infinite alternate;
+}
     background: #fff;
 }
 .video-desc {
     max-width: 320px;
+}
+.premium {
+    font-size: 0.95rem;
+    color: #e67a3f;
+    font-weight: bold;
+    text-shadow: 1px 2px 0 #fffbe7, 2px 4px 8px #f88379, 0 1px 0 #fcd4ce;
+    transform: perspective(200px) rotateX(6deg) scale(1.01);
+    animation: item3dpop 2.2s cubic-bezier(.4,2,.6,.8) infinite alternate;
 }
 .video-desc h3 {
     margin: 0 0 8px 0;
@@ -61,6 +77,11 @@
         flex-direction: column;
         gap: 16px;
         padding: 14px 4vw;
+.item-box p {
+    text-shadow: 1px 2px 0 #fffbe7, 2px 4px 8px #f88379, 0 1px 0 #fcd4ce;
+    transform: perspective(200px) rotateX(6deg) scale(1.01);
+    animation: item3dpop 2.2s cubic-bezier(.4,2,.6,.8) infinite alternate;
+}
     }
     .tour-video {
         width: 90vw;
@@ -165,9 +186,29 @@ nav a:hover {
     box-shadow: 0 8px 24px #f88379;
 }
 .item-title {
-    font-weight: 700;
-    color: #b33030;
-    margin-bottom: 8px;
+        font-weight: 700;
+        color: #b33030;
+        margin-bottom: 8px;
+        font-size: 1.18rem;
+        letter-spacing: 1px;
+        text-shadow: 1px 2px 0 #fffbe7, 2px 4px 8px #f88379, 0 1px 0 #fcd4ce;
+        transform: perspective(200px) rotateX(8deg) scale(1.04);
+        animation: item3dpop 2.2s cubic-bezier(.4,2,.6,.8) infinite alternate;
+}
+
+@keyframes item3dpop {
+    0% {
+        transform: perspective(200px) rotateX(8deg) scale(1.04) translateY(0);
+        text-shadow: 1px 2px 0 #fffbe7, 2px 4px 8px #f88379, 0 1px 0 #fcd4ce;
+    }
+    50% {
+        transform: perspective(200px) rotateX(-8deg) scale(1.09) translateY(-3px);
+        text-shadow: 2px 4px 0 #fffbe7, 4px 8px 16px #f88379, 0 2px 0 #fcd4ce;
+    }
+    100% {
+        transform: perspective(200px) rotateX(8deg) scale(1.04) translateY(0);
+        text-shadow: 1px 2px 0 #fffbe7, 2px 4px 8px #f88379, 0 1px 0 #fcd4ce;
+    }
 }
 .item-desc {
     font-size: 1rem;
