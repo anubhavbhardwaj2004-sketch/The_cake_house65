@@ -53,17 +53,28 @@
 	}
 	.cookies, .cakes {
 		flex-direction: column;
-		gap: 14px;
+		gap: 8px;
+		padding: 0 1vw;
+		width: 100vw;
+		box-sizing: border-box;
 	}
 	.item-box {
-		width: 95vw;
-		padding: 10px 2vw;
-		margin: 0 auto;
+		width: 98vw;
+		max-width: 340px;
+		min-width: 0;
+		padding: 14px 3vw 16px 3vw;
+		margin: 0 auto 8px auto;
+		border-radius: 10px;
+		box-sizing: border-box;
+		box-shadow: 0 1px 8px #ffc3b8;
 	}
 	.item-box img {
 		width: 100%;
+		max-width: 320px;
 		height: 110px;
 		object-fit: cover;
+		border-radius: 8px;
+		margin-bottom: 6px;
 	}
 	.video-card {
 		flex-direction: column;

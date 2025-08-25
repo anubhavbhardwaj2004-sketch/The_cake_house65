@@ -28,6 +28,7 @@
             <a href="#cakes">Cake Flavours</a>
             <a href="#About">About</a>
             <a href="#video">video</a>
+            <a href="#More design">More design</a>
         </nav>
         <div style="margin-top:18px; font-size:1.25rem; color:#fff;">Order the finest cakes & cookies in premium quality
         </div>
@@ -248,7 +249,31 @@
             </div>
         </div>
     </section>
+ <!-- More Design Section -->
+    <section class="section" id="More design" style="margin-top:36px; background:linear-gradient(120deg,#fffbe7 60%,#ffe3ec 100%); border-radius:18px; box-shadow:0 4px 24px #fcd4ce; padding:36px 5vw; text-align:center;">
+        <div class="section-title" style="font-size:1.5rem; color:#b33030; margin-bottom:18px;">More Design & Gallery</div>
+        <p style="font-size:1.08rem; color:#b33030; margin-bottom:18px;">Explore our beautiful cakes, cookies, and bakery moments!</p>
+        <button id="open-gallery" style="background:#b33030; color:#fff; border:none; padding:12px 28px; border-radius:10px; font-size:1.1rem; cursor:pointer; box-shadow:0 2px 8px #fcd4ce;">Open Gallery</button>
+    </section>
 
+    <!-- Modal Gallery -->
+    <div id="gallery-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:2000; align-items:center; justify-content:center;">
+        <div style="background:#fff; border-radius:14px; max-width:96vw; max-height:90vh; padding:18px 12px; position:relative; box-shadow:0 8px 32px #b33030; display:flex; flex-direction:column; align-items:center;">
+            <button id="close-gallery" style="position:absolute; top:10px; right:16px; background:none; border:none; font-size:2rem; color:#b33030; cursor:pointer;">&times;</button>
+            <div id="gallery-images" style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center; align-items:center; max-width:90vw; max-height:70vh; overflow:auto; margin-top:24px;">
+                <img src="assets/BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9.jpg" alt="Bakery Cookie" style="width:180px; border-radius:8px; box-shadow:0 2px 8px #fcd4ce;">
+                <img src="assets/bb-cookies-2-scaled.jpg" alt="Cookies" style="width:180px; border-radius:8px; box-shadow:0 2px 8px #fcd4ce;">
+                <img src="assets/choclate cake.jpg" alt="Chocolate Cake" style="width:180px; border-radius:8px; box-shadow:0 2px 8px #fcd4ce;">
+                <img src="assets/Fruit.jpg" alt="Fruit Cake" style="width:180px; border-radius:8px; box-shadow:0 2px 8px #fcd4ce;">
+                <img src="assets/red velvate.jpg" alt="Red Velvet" style="width:180px; border-radius:8px; box-shadow:0 2px 8px #fcd4ce;">
+                <img src="assets/strawberry .jpg" alt="Strawberry" style="width:180px; border-radius:8px; box-shadow:0 2px 8px #fcd4ce;">
+                <img src="assets/trufle.jpg" alt="Truffle" style="width:180px; border-radius:8px; box-shadow:0 2px 8px #fcd4ce;">
+                <img src="assets/vannila.jpg" alt="Vanilla" style="width:180px; border-radius:8px; box-shadow:0 2px 8px #fcd4ce;">
+                <img src="assets/OIP.jpeg" alt="OIP" style="width:180px; border-radius:8px; box-shadow:0 2px 8px #fcd4ce;">
+                <img src="assets/multi.jpeg" alt="Multi" style="width:180px; border-radius:8px; box-shadow:0 2px 8px #fcd4ce;">
+            </div>
+        </div>
+    </div>
 
     <!-- Video Section -->
     <section class="section" id="video">
@@ -528,4 +553,21 @@
 
 </body>
 
+<script>
+// Gallery modal logic
+document.getElementById('open-gallery').onclick = function() {
+    document.getElementById('gallery-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+};
+document.getElementById('close-gallery').onclick = function() {
+    document.getElementById('gallery-modal').style.display = 'none';
+    document.body.style.overflow = '';
+};
+document.getElementById('gallery-modal').onclick = function(e) {
+    if (e.target === this) {
+        this.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+};
+</script>
 </html>
