@@ -1,3 +1,13 @@
+/* Qr code style */
+#bill img[alt="Qr"] {
+  width: 150px;       /* optimal size for scanning */
+  height: 150px;      /* maintain square aspect ratio */
+  border-radius: 12px; /* keep your rounded corners */
+  box-shadow: 0 2px 8px #fcd4ce;
+  display: block;
+  margin: 12px auto;  /* center the image */
+}
+
 /* style.css */
 /* order button  */
 /* Floating Instagram Button */
