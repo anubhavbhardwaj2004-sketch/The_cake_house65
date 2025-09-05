@@ -30,6 +30,7 @@
             <a href="#video">video</a>
             <a href="#More design">More design</a>
             <a href="#stock">stock</a>
+            <a href="#send">Send</a>
         </nav>
         <div style="margin-top:18px; font-size:1.25rem; color:#fff;">Order the finest cakes & cookies in premium quality
         </div>
@@ -268,6 +269,21 @@
         <button id="open-gallery" style="background:#b33030; color:#fff; border:none; padding:12px 28px; border-radius:10px; font-size:1.1rem; cursor:pointer; box-shadow:0 2px 8px #fcd4ce;">Open Gallery</button>
     </section>
 
+     <!-- More Design upload -->
+    <section class="section" id="send" style="margin-top:36px; background:linear-gradient(120deg,#fffbe7 60%,#ffe3ec 100%); border-radius:18px; box-shadow:0 4px 24px #fcd4ce; padding:36px 5vw; text-align:center;">
+        <div class="section-title" style="font-size:1.5rem; color:#b33030; margin-bottom:18px;">Send your recomended design</div>
+        <p style="font-size:1.08rem; color:#b33030; margin-bottom:18px;">Send the pics of your cake we will make it for you</p>
+        <button id="send" style="background:#b33030; color:#fff; border:none; padding:12px 28px; border-radius:10px; font-size:1.1rem; cursor:pointer; box-shadow:0 2px 8px #fcd4ce;">send to whatsapp</button>
+    </section>
+<script>
+    document.getElementById('send').addEventListener('click', function() {
+  const phone = '919289282269'; // WhatsApp number from your code
+  const message = encodeURIComponent(" Can you make a cake like this?");
+  const url = `https://wa.me/${phone}?text=${message}`;
+  window.open(url, '_blank');
+});
+
+</script>
     <!-- Modal Gallery -->
     <div id="gallery-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:2000; align-items:center; justify-content:center;">
         <div style="background:#fff; border-radius:14px; max-width:96vw; max-height:90vh; padding:18px 12px; position:relative; box-shadow:0 8px 32px #b33030; display:flex; flex-direction:column; align-items:center;">
