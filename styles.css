@@ -1,8 +1,8 @@
 /* Qr code style */
 #bill img[alt="Qr"] {
-  width: 150px;       /* optimal size for scanning */
-  height: 150px;      /* maintain square aspect ratio */
-  border-radius: 12px; /* keep your rounded corners */
+  width: 200px;       /* optimal size for scanning */
+  height: 200px;      /* maintain square aspect ratio */
+  border-radius: 11px; /* keep your rounded corners */
   box-shadow: 0 2px 8px #fcd4ce;
   display: block;
   margin: 12px auto;  /* center the image */
