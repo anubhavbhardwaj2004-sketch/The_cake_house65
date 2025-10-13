@@ -102,7 +102,7 @@
                     <img src="assets/Qr code.jpg" alt="Qr"></img>  &  </li>
                 <li>UPI Payment:<br>
                     <a href='upi://pay?pa=7042178046@ibl&pn=Cake%20House&am=${finalTotal.toFixed(2)}&cu=INR' style='color:#25D366; font-weight:bold;' target='_blank'>
-                        Pay ₹${finalTotal.toFixed(2)} via UPI (7042178046@ibl)
+                        Pay ₹${finalTotal.toFixed(2)} via UPI (9310249651@ibl)
                     </a>
                     <div style='font-size:0.95em; color:#b33030;'>Tap to pay by UPI app</div>
                 </li>
