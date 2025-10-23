@@ -111,6 +111,11 @@
     display: block;
     margin: 0 auto 10px auto;
 }
+/* Order CTA decorative GIF and arrow */
+.order-cta-wrap { display:inline-flex; align-items:center; gap:10px; margin-top:12px; }
+.order-arrow { display:inline-flex; align-items:center; }
+.order-arrow svg { width:30px; height:20px; transform-origin:center; animation: arrowWave 2s ease-in-out infinite; }
+@keyframes arrowWave { 0% { transform: translateX(0); } 50% { transform: translateX(-6px); } 100% { transform: translateX(0); } }
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
@@ -378,6 +383,44 @@ nav a:hover {
     100% { transform: scale(1); }
 }
 
+/* Section icons next to titles */
+.section-icon {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+    color: #fff;
+    background: rgba(0,0,0,0.08);
+    padding: 6px 8px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.section-icon i {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Gentle animation variants */
+.section-icon.pulse { animation: iconPulse 2.4s ease-in-out infinite; }
+.section-icon.float { animation: iconFloat 3.6s ease-in-out infinite; }
+.section-icon.spin:hover { transform: rotate(18deg) scale(1.02); }
+
+@keyframes iconPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+@keyframes iconFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+@media (max-width: 800px) {
+    .section-icon { padding: 6px; border-radius: 8px; margin-left: 8px; }
+    .section-icon i { font-size: 0.95rem; }
+}
+
 @keyframes fadeInBtn {
     from { opacity: 0; transform: translateY(20px);}
     to { opacity: 1; transform: translateY(0);}
@@ -406,3 +449,83 @@ footer {
     color: #fff;
     margin-top: 40px;
 }
+
+/* Animated location pin for the Find Us section */
+.location-pin-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 12px;
+}
+.location-pin {
+    width: 56px;
+    height: 56px;
+    display: inline-block;
+    transform-origin: center bottom;
+    animation: pinBounce 2.2s cubic-bezier(.2,.9,.2,1) infinite;
+    filter: drop-shadow(0 6px 16px rgba(0,0,0,0.16));
+}
+.location-pin .pin-dot { animation: pinPulse 1.8s ease-in-out infinite; }
+.map-with-pin { position: relative; display: inline-block; }
+.map-with-pin .pin-overlay {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+@keyframes pinBounce {
+    0% { transform: translateY(0) scale(1); }
+    40% { transform: translateY(-10px) scale(1.02); }
+    60% { transform: translateY(-6px) scale(1.01); }
+    100% { transform: translateY(0) scale(1); }
+}
+@keyframes pinPulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.35); opacity: 0.35; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+@media (max-width: 800px) {
+    .location-pin { width: 44px; height: 44px; }
+    .map-with-pin .pin-overlay { top: 8px; }
+}
+
+/* Get Directions button */
+.directions-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg,#f88379 0%, #b33030 100%);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(179, 48, 48, 0.18);
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.directions-btn:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(179,48,48,0.22); }
+.directions-wrap { margin-top: 12px; display:flex; justify-content:center; }
+
+/* Double-tick badge next to WhatsApp and small follow GIF */
+.tick-badge {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:28px;
+    height:20px;
+    margin-left:8px;
+    vertical-align:middle;
+}
+.tick-badge svg { width:28px; height:20px; display:block; }
+.small-follow-gif { display:none; }
+
+@keyframes tickBounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+}
+.tick-badge svg { animation: tickBounce 2.2s ease-in-out infinite; }
