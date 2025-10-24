@@ -57,6 +57,8 @@
                 const date = document.getElementById('date').value;
                 const location = document.getElementById('location').value;
                 const message = document.getElementById('message').value;
+                // read selected payment method from the form
+                const paymentMethod = (document.getElementById('payment-method') && document.getElementById('payment-method').value) ? document.getElementById('payment-method').value : 'Not specified';
 
                 // Calculate price
                 let unitPrice = priceList[item] || 0;
@@ -74,7 +76,7 @@
                 let finalTotal = total - discountAmount;
 
                 // Store order in localStorage (for demo)
-                const order = { name, item, quantity, weight, message, total: finalTotal, date: new Date().toLocaleString(), discount: discountAmount, discountCode };
+                const order = { name, item, quantity, weight, message, paymentMethod, total: finalTotal, date: new Date().toLocaleString(), discount: discountAmount, discountCode };
                 let orders = JSON.parse(localStorage.getItem('cakehouse_orders') || '[]');
                 orders.push(order);
                 localStorage.setItem('cakehouse_orders', JSON.stringify(orders));
@@ -91,6 +93,7 @@
             <b>Quantity:</b> ${quantity}<br>
             <b>Weight (kg):</b> ${weight}<br>
             <b>Message:</b> ${message ? message : '-'}<br>
+            <b>Payment Method:</b> ${paymentMethod}<br>
             <hr>
             <b>Total Amount:</b> ₹${total.toFixed(2)}<br>
             ${discountAmount > 0 ? `<b>Discount (${discountCode}):</b> -₹${discountAmount.toFixed(2)}<br>` : ''}
@@ -118,7 +121,7 @@
                 document.getElementById('send-whatsapp').onclick = function() {
                     const phone = '919289282269'; // Change to your WhatsApp number
                     const waMsg = encodeURIComponent(
-                        `New Cake House Order!\n\nName: ${name}\nNumber: ${number}\nLocation: ${location}\ndate:${date}\nItem: ${item}\nQuantity: ${quantity}\nWeight (kg): ${weight}\nMessage: ${message ? message : '-'}\nTotal: ₹${total.toFixed(2)}${discountAmount > 0 ? `\nDiscount (${discountCode}): -₹${discountAmount.toFixed(2)}` : ''}\nFinal Amount: ₹${finalTotal.toFixed(2)}`
+                        `New Cake House Order!\n\nName: ${name}\nNumber: ${number}\nLocation: ${location}\ndate:${date}\nItem: ${item}\nQuantity: ${quantity}\nWeight (kg): ${weight}\nMessage: ${message ? message : '-'}\nPayment Method: ${paymentMethod}\nTotal: ₹${total.toFixed(2)}${discountAmount > 0 ? `\nDiscount (${discountCode}): -₹${discountAmount.toFixed(2)}` : ''}\nFinal Amount: ₹${finalTotal.toFixed(2)}`
                     );
                     window.open(`https://wa.me/${phone}?text=${waMsg}`, '_blank');
                 };
@@ -143,6 +146,7 @@
                     html += `<li>
                         <b>${item.item}</b> - Qty: ${item.quantity}, Wt: ${item.weight}kg<br>
                         <span>₹${item.total.toFixed(2)}</span>
+                        <div style="font-size:0.92em; color:#555; margin-top:6px;">Payment: ${item.paymentMethod ? item.paymentMethod : 'Not specified'}</div>
                         <button style="margin-left:10px; color:#b33030; background:none; border:none; cursor:pointer;" onclick="removeCartItem(${idx})">Remove</button>
                     </li>`;
                     grandTotal += item.total;
@@ -153,7 +157,7 @@
 
                 document.getElementById('checkout-btn').onclick = function() {
                     let orderSummary = cart.map((item, i) =>
-                        `${i+1}. ${item.item} - Qty: ${item.quantity}, Wt: ${item.weight}kg, ₹${item.total.toFixed(2)}`
+                        `${i+1}. ${item.item} - Qty: ${item.quantity}, Wt: ${item.weight}kg, ₹${item.total.toFixed(2)}${item.paymentMethod ? `, Payment: ${item.paymentMethod}` : ''}`
                     ).join('\n');
                     const phone = '919289282269';
                     const waMsg = encodeURIComponent(

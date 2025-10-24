@@ -140,7 +140,14 @@
             <label for="message">Message / Instructions:</label>
             <textarea id="message" rows="3"
                 placeholder="Special requests, birthday message, allergies, etc."></textarea>
-
+            <label for="payment-method">Select payment method:</label>
+            <select id="payment-method" required>
+                <optgroup label="Payment Method">
+                    <option>Cash on delivery</option>
+                    <option>Qr code</option>
+                    <option>UPI link</option>
+                </optgroup>
+            </select>
             <div class="order-cta-wrap">
                 <button type="submit">Place Order</button>
  <span class="order-arrow" aria-hidden="true">
