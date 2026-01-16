@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake House - Order Online</title>
+    <!--link for icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400|Open+Sans:400,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css responsive-->
+    <link rel="stylesheet" href="./phone.css">
+</head>
+
+<body>
+    <header>
+        <!--logo modified-->
+        <img src="./assets/logo-modified.png" alt="logo" class="logo-small">
+        <h1>The Cake House</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="order.html">Order Online</a>
+            <a href="cookies.html">Cookies</a>
+            <a href="cakes.html">Cake Flavours</a>
+            <a href="about.html">About</a>
+            <a href="video.html">Video</a>
+            <a href="more-design.html">More Design</a>
+            <a href="stock.html">Stock</a>
+            <a href="send.html">Send</a>
+            <a href="happy-customer-rating.html">Happy Customer & Rating</a>
+        </nav>
+        <div style="margin-top:18px; font-size:1.25rem; color:#fff;">Order the finest cakes & cookies in premium quality
+        </div>
+    </header>
+
+    <!-- Order Section -->
+    <section class="section" id="order">
+    <div class="section-title">Order Online <span class="section-icon"><i class="fa-solid fa-basket-shopping"></i></span></div>
+        <form class="order-form">
+            <label for="">Country </label>
+            <select id="country" required>
+                <option value="India">India</option>
+            </select>
+            <label for="">City </label>
+            <select id="country" required>
+                <option value="Delhi">Delhi</option>
+                <option value="Up">Up</option>
+                <option value="Delhi-NCR">Delhi-NCR</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Hydrabad">Hydrabad</option>
+                <option value="Pune">Pune</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Ahemdabad">Ahemdabad</option>
+                <option value="Surat">Surat</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Kanpur">Kanpur</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Indore">Indore</option>
+                <option value="Thane">Thane</option>
+                <option value="Bhopal">Bhopal</option>
+                <option value="Visakhapatnam">Visakhapatnam</option>
+                <option value="Pimpri-Chinchwad">Pimpri-Chinchwad</option>
+                <option value="Patna">Patna</option>
+                <option value="Vadodara">Vadodara</option>
+                <option value="Ghaziabad">Ghaziabad</option>
+                <option value="Ludhiana">Ludhiana</option>
+                <option value="Agra">Agra</option>
+                <option value="Nashik">Nashik</option>
+                <option value="Faridabad">Faridabad</option>
+                <option value="Meerut">Meerut</option>
+                <option value="Rajkot">Rajkot</option>
+                <option value="Kalyan-Dombivli">Kalyan-Dombivli</option>
+                <option value="Vasai-Virar">Vasai-Virar</option>
+                <option value="Varanasi">Varanasi</option>
+                <option value="Srinagar">Srinagar</option>
+                <option value="Aurangabad">Aurangabad</option>
+            </select>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required placeholder="Your Name">
+            <label for="number">Number:</label>
+            <input type="text" id="number" required placeholder="Your Number">
+            <label for="location">Location:</label>
+            <input type="text" id="location" required placeholder="Your Delivery Location">
+            <label for="date">date & time when you want your order </label>    
+    <input id="date"placeholder="Enter your date" type="datetime-local">
+            <label for="item">Select Item:</label>
+            <select id="item" required>
+                <optgroup label="Cookies">
+                    <option>Chocolate Chip Cookie</option>
+                    <option>Oatmeal Raisin Cookie</option>
+                    <option>Butter Shortbread</option>
+                    <option>Double Chocolate Cookie</option>
+                    <option>Almond Biscotti</option>
+                </optgroup>
+                <optgroup label="Cakes">
+                    <option>Classic Chocolate Cake</option>
+                    <option>Vanilla Dream Cake</option>
+                    <option>Red Velvet Cake</option>
+                    <option>Black Forest Cake</option>
+                    <option>Strawberry Delight Cake</option>
+                    <option>Rainbow Funfetti Cake</option>
+                </optgroup>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" required placeholder="Number of items">
+
+            <label for="weight">How many kg?</label>
+            <input type="number" id="weight" min="0.25" step="0.25" placeholder="e.g. 1.5" required>
+
+            <label for="message">Message / Instructions:</label>
+            <textarea id="message" rows="3"
+                placeholder="Special requests, birthday message, allergies, etc."></textarea>
+            <label for="payment-method">Select payment method:</label>
+            <select id="payment-method" required>
+                <optgroup label="Payment Method">
+                    <option>Cash on delivery</option>
+                    <option>Qr code</option>
+                    <option>UPI link</option>
+                </optgroup>
+            </select>
+            <div class="order-cta-wrap">
+                <button type="submit">Place Order</button>
+ <span class="order-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 8H6" stroke="#b33030" stroke-width="2" stroke-linecap="round" />
+                        <path d="M10 2L4 8L10 14" stroke="#b33030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+            </div>
+        </form>
+        <div id="bill"
+            style="display:none; margin-top:20px; background:#fffbe7; border-radius:10px; box-shadow:0 2px 8px #fcd4ce; padding:18px 12px; max-width:350px; margin-left:auto; margin-right:auto;">
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
